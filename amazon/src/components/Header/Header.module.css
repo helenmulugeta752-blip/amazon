@@ -1,0 +1,178 @@
+
+.header {
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.topHeader {
+  background: #131921;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+}
+
+.logoLocation,
+.rightHeader,
+.location,
+.language {
+  display: flex;
+  align-items: center;
+}
+
+.logoLocation {
+  gap: 12px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.location {
+  gap: 3px;
+}
+
+.location svg {
+  font-size: 20px;
+}
+
+.location p,
+.navLink p {
+  font-size: 10px;
+  margin: 0;
+  color: #ccc;
+}
+
+.location span,
+.navLink span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.search {
+  display: flex;
+  height: 38px;
+  flex: 1;
+  max-width: 800px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search select {
+  width: 50px;
+  border: none;
+  background: #e6e6e6;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search button {
+  width: 42px;
+  border: none;
+  background: #febd69;
+  color: #222;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.rightHeader {
+  gap: 12px;
+}
+
+.language {
+  gap: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.language img {
+  width: 23px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navLink:hover,
+.cart:hover,
+.logo:hover,
+.location:hover,
+.language:hover {
+  outline: 1px solid white;
+  outline-offset: 5px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: white;
+  font-size: 23px;
+  text-decoration: none;
+}
+
+.cart span {
+  font-size: 12px;
+}
+
+.lowerHeader {
+  background: #232f3e;
+  padding: 0 8px;
+}
+
+.lowerHeader ul {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lowerHeader li {
+  padding: 9px 7px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.lowerHeader li:hover {
+  border: 1px solid white;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 750px) {
+  .topHeader {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .rightHeader {
+    gap: 8px;
+  }
+
+  .lowerHeader {
+    overflow-x: auto;
+  }
+}
