@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Carousel from'./components/Carousel/Carousel';
+import Catagory from './components/Catagory/catagory';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div >
       <Header/>
       <Carousel/>
+      <Catagory/>
     </div>
   );
 }
