@@ -1,6 +1,7 @@
 
 import React from 'react';
 import classes from './Header.module.css';
+import { Link } from 'react-router-dom';
 import LowerHeader from './LowerHeader';
 import { FaSearch, FaCartArrowDown } from 'react-icons/fa';
 import { CiLocationOn } from 'react-icons/ci';
@@ -10,12 +11,12 @@ function Header() {
     <header className={classes.header}>
       <section className={classes.topHeader}>
         <div className={classes.logoLocation}>
-          <a href="/" className={classes.logo}>
+          <Link to="/" className={classes.logo}>
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="Amazon"
             />
-          </a>
+          </Link>
 
           <div className={classes.location}>
             <CiLocationOn />
@@ -45,20 +46,20 @@ function Header() {
             <span>EN</span>
           </div>
 
-          <a href="#" className={classes.navLink}>
+          <Link to="/auth" className={classes.navLink}>
             <p>Sign in</p>
             <span>Account and Lists</span>
-          </a>
+          </Link>
 
-          <a href="#" className={classes.navLink}>
+          <Link to="/order" className={classes.navLink}>
             <p>Returns</p>
             <span>and Orders</span>
-          </a>
+          </Link>
 
-          <a href="#" className={classes.cart}>
+          <Link to="/cart" className={classes.cart}>
             <FaCartArrowDown />
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </section>
 
