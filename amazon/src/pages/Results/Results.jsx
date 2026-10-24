@@ -9,9 +9,12 @@ import classes from './Results.module.css';
 
 function Results() {
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { categoryName } = useParams();
 
   useEffect(() => {
+    setLoading(true);
+
     axios
       .get(`${productUrl}/products/catagory/${categoryName}`)
       .then((res) => {
@@ -19,6 +22,9 @@ function Results() {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [categoryName]);
 
@@ -33,14 +39,18 @@ function Results() {
 
         <hr />
 
-        <div className={classes.products_container}>
-          {results.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <h2>Loading products...</h2>
+        ) : (
+          <div className={classes.products_container}>
+            {results.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+              />
+            ))}
+          </div>
+        )}
       </section>
     </Layout>
   );
